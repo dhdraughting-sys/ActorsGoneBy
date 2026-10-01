@@ -74,7 +74,7 @@ ACTORS = [
             "the sitcom Bless This House until 1976, when he collapsed and died of a heart "
             "attack while performing on stage in Sunderland."
         ),
-        "photo": None,
+        "photo": "sid-james.jpg",
         "commons_hint": "https://commons.wikimedia.org/wiki/Category:Sid_James",
     },
     {
