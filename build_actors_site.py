@@ -116,6 +116,7 @@ section{padding:70px 0;}
 .bio-photo img{width:100%;height:100%;object-fit:cover;}
 .bio-photo .ph-icon{font-size:2.6rem;opacity:.7;}
 .bio-photo .ph-label{font-size:.76rem;letter-spacing:.06em;text-transform:uppercase;color:#a89a7c;font-weight:600;text-align:center;padding:0 14px;font-family:'Bebas Neue',sans-serif;}
+.photo-credit{font-size:.74rem;line-height:1.5;color:#8a7d64;margin-top:8px;max-width:260px;}
 .bio-name{font-size:clamp(1.9rem,4vw,2.6rem);color:var(--gold-pale);margin-bottom:6px;}
 .bio-years{font-size:1.1rem;color:var(--gold);font-variant-numeric:tabular-nums;margin-bottom:16px;font-family:'Bebas Neue',sans-serif;letter-spacing:.04em;}
 .bio-known{font-size:1.02rem;color:#d9cdb4;margin-bottom:18px;font-style:italic;}
@@ -181,7 +182,7 @@ NAV_ITEMS = [("/index.html", "Home"), ("/portfolio.html", "Portfolio")]
 def top_bar_html():
     return """
 <div class="top-bar">
-  <div class="wrap">Sponsored by <a href="https://www.clearlineweb.co.uk" target="_blank" rel="noopener">Clearline Web</a></div>
+  <div class="wrap">In Partnership with <a href="https://www.clearlineweb.co.uk" target="_blank" rel="noopener">Clearline Web</a></div>
 </div>
 """
 
@@ -478,11 +479,18 @@ def build_bio_page(actor):
         f'<a href="../portfolio.html">{_esc(c)}</a>' for c in actor["categories"]
     )
     photo_html = photo_block(actor, css_class="bio-photo").replace('images/actors/', '../images/actors/')
+    credit_html = (
+        f'<p class="photo-credit">{_esc(actor["photo_credit"])}</p>'
+        if actor.get("photo_credit") else ""
+    )
     body = f"""
 <div class="bio-page">
   <div class="wrap">
     <div class="bio-hero">
-      {photo_html}
+      <div>
+        {photo_html}
+        {credit_html}
+      </div>
       <div>
         <h1 class="bio-name">{_esc(actor["name"])}</h1>
         <div class="bio-years marquee">{_esc(actor["years"])}</div>

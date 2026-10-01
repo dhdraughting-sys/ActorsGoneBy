@@ -96,7 +96,12 @@ ACTORS = [
             "quick wit and theatrical indignation were given free rein. He remains one of the "
             "most quoted and impersonated British comic voices of the twentieth century."
         ),
-        "photo": None,
+        "photo": "kenneth-williams.jpg",
+        "photo_credit": (
+            "Kenneth Williams by Godfrey Argent, bromide print, 2 December 1968, "
+            "NPG x165576 © National Portrait Gallery, London. Used with permission, "
+            "non-commercial licence."
+        ),
         "commons_hint": "https://commons.wikimedia.org/wiki/Category:Kenneth_Williams",
     },
     {
